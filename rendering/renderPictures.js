@@ -20,6 +20,7 @@ export const renderPictures = async () => {
   const renderSelectedBreedImages = async () => {
     const selectedBreedId = dropdown.value;
     const breedImages = await getBreedImages(selectedBreedId);
+    console.log(breedImages);
 
     breedImages.forEach((image, index) => {
       if (images[index]) {
@@ -29,7 +30,7 @@ export const renderPictures = async () => {
     });
   };
 
-  if (dropdown.value) {
+  if (dropdown.value !== 'placeholder') {
     await renderSelectedBreedImages();
   } else {
     renderRandomImages();

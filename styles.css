@@ -113,6 +113,15 @@ nav {
   transform: translate(2px, 2px);
 }
 
+img {
+  box-shadow: var(--color-accent) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+
 @media (min-width: 768px) {
   #breed-dropdown {
     min-width: 120px;

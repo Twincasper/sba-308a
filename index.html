@@ -3,11 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="main.js"></script>
-  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/650ac78ff8.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" defer src="main.js"></script>
+  <title>The Big Cats</title>
 </head>
 <body>
-  
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="fa-solid fa-cat fa-bounce" style="color: #ff9933;"></i>
+        The Big Cats
+      </a>
+    </div>
+  </nav>
+
+  <div id="search" class="input-group rounded d-flex gap-4">
+    <select id="breed-dropdown" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" aria-placeholder="Select a kitty">
+      <option value="" disabled selected>Select a kitty</option>
+    </select>
+    <span class="input-group-text border-0" id="search-addon">
+      <i class="fas fa-search"></i>
+    </span>
+  </div>
+
+  <!-- Gallery -->
+<div class="row">
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+    />
+
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Wintry Mountain Landscape"
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Mountains in the Clouds"
+    />
+
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Waves at Sea"
+    />
+
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+</div>
+<!-- Gallery -->
 </body>
 </html>

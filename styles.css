@@ -1,0 +1,91 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* #283618 for body
+  #bc6c25 for secondary
+  #fefae0 for accent
+  Raleway for font
+*/
+
+:root {
+  --color-body: #283618;
+  --color-secondary: #bc6c25;
+  --color-accent: #fefae0;
+  --font-family: 'Raleway', sans-serif;     
+}
+
+body {
+  background-color: var(--color-body);
+  color: var(--color-accent);
+  font-family: var(--font-family);
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: var(--color-accent);
+  padding: 1em;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  font-weight: 700;
+}
+
+#search {
+  width: 18%;
+  height: 3rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+#search span {
+  border-radius: 30%;
+}
+
+#search::placeholder {
+  color: var(--color-secondary);
+}

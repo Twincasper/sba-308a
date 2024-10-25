@@ -104,11 +104,11 @@ nav {
   touch-action: manipulation;
 }
 
-#breed-dropdown:hover {
+#breed-dropdown:hover, button:hover {
   background-color: #fff;
 }
 
-#breed-dropdown:active {
+#breed-dropdown:active, button {
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
 }

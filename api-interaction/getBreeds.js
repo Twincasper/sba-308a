@@ -1,9 +1,9 @@
-// https://api.thedogapi.com/v1/breeds
-import { fetchData } from "./fetching.js"
+import fetchData from './fetching.js';
 
-
-export const getBreeds = async () => {
-  const [breeds, error] = await fetchData(`https://api.thedogapi.com/v1/breeds`);
+const getBreeds = async () => {
+  const [breeds, error] = await fetchData(
+    `https://api.thedogapi.com/v1/breeds`
+  );
   console.log(breeds);
 
   if (error) {
@@ -11,4 +11,6 @@ export const getBreeds = async () => {
   }
 
   return breeds;
-}
+};
+
+export default getBreeds;

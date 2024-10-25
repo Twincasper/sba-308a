@@ -10,6 +10,8 @@ const renderRandomImages = async () => {
     if (images[index]) {
       images[index].src = breed.url;
       images[index].alt = breed.name;
+      images[index].dataset.breedId = breed.id;
+      console.log("image id: ", images[index].dataset.breedId);
     }
   });
 };

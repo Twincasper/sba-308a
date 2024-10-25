@@ -10,7 +10,9 @@ const renderSelectedBreedImages = async () => {
   breedImages.forEach((image, index) => {
     if (images[index]) {
       images[index].src = image.url;
-      images[index].alt = image.name || 'Cat Image';
+      images[index].alt = image.name || `Image of ${image.name}`;
+      images[index].dataset.breedId = image.id;
+      console.log("image id for selectedBreed: ", images[index].dataset.breedId);
     }
   });
 };

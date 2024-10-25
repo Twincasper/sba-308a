@@ -1,21 +1,14 @@
 import { getBreeds } from "../api-interaction/getBreeds.js";
+import { getRandomImages } from "../api-interaction/getRandomImages.js";
 import { getBreedImages } from "../api-interaction/getBreedImages.js";
+import { renderRandomImages } from "./renderRandomImages.js";
 
 export const renderPictures = async () => {
-  const breeds = await getBreeds();
   const dropdown = document.getElementById("breed-dropdown");
   const images = document.querySelectorAll(".row img");
-
-  const renderRandomImages = () => {
-    const randomBreeds = breeds.sort(() => 0.5 - Math.random()).slice(0, 6);
-
-    randomBreeds.forEach((breed, index) => {
-      if (images[index]) {
-        images[index].src = breed.url;
-        images[index].alt = breed.name;
-      }
-    });
-  };
+  const fetch = document.querySelector('#fetch');
+  
+  renderRandomImages();
 
   const renderSelectedBreedImages = async () => {
     const selectedBreedId = dropdown.value;
@@ -37,4 +30,5 @@ export const renderPictures = async () => {
   }
 
   dropdown.addEventListener("change", renderSelectedBreedImages);
+  fetch.addEventListener("click", renderRandomImages);
 };

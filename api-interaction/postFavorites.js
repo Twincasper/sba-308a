@@ -1,6 +1,6 @@
-import fetchData from "./fetching";
+import fetchData from "./fetching.js";
 
-const postFavorite = async () => {
+const postFavorite = async (imageId) => {
   try {
     const [data, error] = await fetchData('https://api.thedogapi.com/v1/favourites', {
       method: 'POST',

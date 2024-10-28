@@ -1,5 +1,6 @@
 import getRandomImages from '../api-interaction/getRandomImages.js';
 import postVote from '../api-interaction/postVote.js';
+import postFavorite from '../api-interaction/postFavorites.js';
 
 const renderRandomImages = async () => {
   const randomImages = await getRandomImages();
@@ -13,16 +14,21 @@ const renderRandomImages = async () => {
       images[index].alt = breed.name;
       images[index].dataset.breedId = breed.id;
 
-      const upvoteButton = images[index].nextElementSibling;
-      const downvoteButton = upvoteButton.nextElementSibling;
+      const imageContainer = images[index].parentElement;
+      const favoriteButton = imageContainer.querySelector('.favorite-tag');
+      const upvoteButton = imageContainer.querySelector('.upvote-tag');
+      const downvoteButton = imageContainer.querySelector('.downvote-tag');
 
-      // Had to use this from stack overflow to avoid the event listener attaching multiple times, should look into this further.
+      // Clone nodes to avoid attaching multiple event listeners
+      favoriteButton.replaceWith(favoriteButton.cloneNode(true));
       upvoteButton.replaceWith(upvoteButton.cloneNode(true));
       downvoteButton.replaceWith(downvoteButton.cloneNode(true));
 
-      const newUpvoteButton = images[index].nextElementSibling;
-      const newDownvoteButton = newUpvoteButton.nextElementSibling;
+      const newFavoriteButton = imageContainer.querySelector('.favorite-tag');
+      const newUpvoteButton = imageContainer.querySelector('.upvote-tag');
+      const newDownvoteButton = imageContainer.querySelector('.downvote-tag');
 
+      newFavoriteButton.addEventListener('click', () => postFavorite(breed.id));
       newUpvoteButton.addEventListener('click', () => postVote(breed.id, 1));
       newDownvoteButton.addEventListener('click', () => postVote(breed.id, -1));
     }

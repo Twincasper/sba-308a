@@ -138,7 +138,7 @@ img:hover {
   position: relative;
 }
 
-.icon-tag {
+.upvote-tag,.downvote-tag {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -150,15 +150,16 @@ img:hover {
   border: none;
 }
 
-.icon-tag i {
+.upvote-tag,.downvote-tag i {
   font-size: 2rem;
 }
 
-.icon-tag:nth-of-type(1) {
+.upvote-tag {
   right: 10px;
+  top: 2px;
 }
 
-.icon-tag:nth-of-type(2) {
+.downvote-tag {
   right: 50px;
 }
 

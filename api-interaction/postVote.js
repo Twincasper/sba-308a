@@ -1,12 +1,13 @@
 import fetchData from "./fetching.js";
+import { API_KEY, BASE_URL } from "../config.js";
 
 const postVote = async (imageId, value) => {
   try {
-    const [data, error] = await fetchData('https://api.thedogapi.com/v1/votes', {
+    const [data, error] = await fetchData(`${BASE_URL}/votes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'live_r4fgoCfYYtM7C7GDwB1r6FhOWoXofw3eQAStnt3oO3ITPGB3TBM30YoAStGlKXoi'
+        'x-api-key': API_KEY
       },
       body: JSON.stringify({
         image_id: imageId,

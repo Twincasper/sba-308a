@@ -40,7 +40,6 @@ const renderSelectedBreedImages = async () => {
 
       newFavoriteButton.addEventListener('click', () => {
         postFavorite(image.id);
-        console.log("image name in newFave event",image.name);
         const toastElement = document.getElementById('fave-toast');
         const toastBody = toastElement.querySelector('.toast-body');
         toastBody.textContent = `This picture has been added to favorites!`;

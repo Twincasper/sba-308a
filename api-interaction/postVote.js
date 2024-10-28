@@ -2,11 +2,11 @@ import fetchData from "./fetching.js";
 
 const postVote = async (imageId, value) => {
   try {
-    const response = await fetchData('https://api.thecatapi.com/v1/votes', {
+    const [data, error] = await fetchData('https://api.thedogapi.com/v1/votes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'YOUR_API_KEY'
+        'x-api-key': 'live_r4fgoCfYYtM7C7GDwB1r6FhOWoXofw3eQAStnt3oO3ITPGB3TBM30YoAStGlKXoi'
       },
       body: JSON.stringify({
         image_id: imageId,
@@ -15,10 +15,10 @@ const postVote = async (imageId, value) => {
       })
     });
 
-    if (response.ok) {
-      console.log('Vote successful');
+    if (error) {
+      console.error('Failed to vote:', error.message);
     } else {
-      console.error('Failed to vote');
+      console.log('Vote successful:', data);
     }
   } catch (error) {
     console.error('Error voting:', error);

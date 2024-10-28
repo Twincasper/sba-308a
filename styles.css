@@ -176,6 +176,23 @@ img:hover {
   font-size: 2rem;
 }
 
+#fave-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: var(--color-body);
+}
+
+#fave-toast .toast-header {
+  background-color: var(--color-body);
+  color: var(--color-accent);
+}
+
+i.bi-bookmark-heart {
+  font-size: 2rem;
+}
+
 @media (min-width: 768px) {
   #breed-dropdown {
     min-width: 120px;

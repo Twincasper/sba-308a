@@ -38,7 +38,15 @@ const renderSelectedBreedImages = async () => {
       console.log("What new upvote is grabbing", newUpvoteButton);
       console.log("What new downvote is grabbing", newDownvoteButton);
 
-      newFavoriteButton.addEventListener('click', () => postFavorite(image.id));
+      newFavoriteButton.addEventListener('click', () => {
+        postFavorite(image.id);
+        console.log("image name in newFave event",image.name);
+        const toastElement = document.getElementById('fave-toast');
+        const toastBody = toastElement.querySelector('.toast-body');
+        toastBody.textContent = `This picture has been added to favorites!`;
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+      });
       newUpvoteButton.addEventListener('click', () => postVote(image.id, 1));
       newDownvoteButton.addEventListener('click', () => postVote(image.id, -1));
     }

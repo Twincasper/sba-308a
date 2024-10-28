@@ -28,7 +28,14 @@ const renderRandomImages = async () => {
       const newUpvoteButton = imageContainer.querySelector('.upvote-tag');
       const newDownvoteButton = imageContainer.querySelector('.downvote-tag');
 
-      newFavoriteButton.addEventListener('click', () => postFavorite(breed.id));
+      newFavoriteButton.addEventListener('click', () => {
+        postFavorite(breed.id);
+        const toastElement = document.getElementById('fave-toast');
+        const toastBody = toastElement.querySelector('.toast-body');
+        toastBody.textContent = `This picture has been added to favorites!`;
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+      });
       newUpvoteButton.addEventListener('click', () => postVote(breed.id, 1));
       newDownvoteButton.addEventListener('click', () => postVote(breed.id, -1));
     }

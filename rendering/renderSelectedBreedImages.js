@@ -17,6 +17,7 @@ const renderSelectedBreedImages = async () => {
 
       const upvoteButton = images[index].nextElementSibling;
       const downvoteButton = upvoteButton.nextElementSibling;
+      
 
       // Had to use this from stack overflow to avoid the event listener attaching multiple times, should look into this further.
       upvoteButton.replaceWith(upvoteButton.cloneNode(true));
